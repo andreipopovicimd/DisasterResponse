@@ -51,16 +51,9 @@ def main():
         print('Loading data...\n    MESSAGES: {}\n    CATEGORIES: {}'
               .format(messages_filepath, categories_filepath))
         df = load_data(messages_filepath, categories_filepath)
-        
-        print(df.shape)
-        print(df.columns)
 
         print('Cleaning data...')
         df = clean_data(df)
-        
-        print(df.info())
-        print(df.head())
-        print(df.iloc[0])
         
         print('Saving data...\n    DATABASE: {}'.format(database_filepath))
         save_data(df, database_filepath)
